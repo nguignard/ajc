@@ -1,28 +1,37 @@
 package voiture;
 
-public class Parking {
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sun.jdi.IntegerValue;
+
+public class Parking<T> implements Comparable<Parking>{
 
 	private String code ="";
 	public String name ="";
 	public int capacity = 15;
 	
+	private List<TollGate> tollGates = new ArrayList<TollGate>();
+	private List<T> vehicules = new ArrayList<T> ();
+	
 	public Parking(String name, String code) {
 		this.name = name;
 		this.code = code;
-		TollGate tollGateIn = new TollGate(Direction.IN, Orientation.WEST);
-		TollGate tollgateOut = new TollGate(Direction.OUT, Orientation.EAST);
-		
-		}
-	
-	public void add(Vehicules vehicule) {
-		
+		this.tollGates.add( new TollGate(Direction.IN, Orientation.WEST));
+		this.tollGates.add( new TollGate(Direction.OUT, Orientation.EAST));
 	}
+	
+	public void add(T vehicule) {
+		this.vehicules.add(vehicule);
+	}
+	
 	public void calculateTotalPrice() {
 		
 	}
 	
 	
 	public class TollGate {
+		private int count = 0;
 		public String id = "";
 		public boolean enable = true;
 		private Direction direction;
@@ -31,7 +40,7 @@ public class Parking {
 		public TollGate(Direction direction, Orientation orientation) {	
 			this.direction=direction;
 			this.orientation=orientation;
-			this.id= code.
+			this.id= code+"#"+count++;
 			}
 	
 }
@@ -44,6 +53,17 @@ public class Parking {
 	private  enum Orientation{
 		NORTH,SOUTH,WEST,EAST;
 	}
+
+	
+
+	@Override
+	public int compareTo(Parking o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+	
 			
 		
 
