@@ -11,10 +11,7 @@ public class Printer {
 	}
 	
 	public void print(String text) {
-		
-		
-		
-		System.out.println("Printer.print() "+text);
+		System.out.println("im " +id +"printing: "+text);
 	}
 	
 	

@@ -16,11 +16,16 @@ public class PrinterCentralizer {
 	}
 
 	public void print(String text) {
-		
-		
-		for(Printer printer:printers) {
-			
+	int	i =0;
+	Printer printer;
+		while(i<printers.size()) {
+			printers.get(i++).print(text);
 		}
+
+		
+		
+		
+		
 	}
 
 	public static PrinterCentralizer getInstance() {

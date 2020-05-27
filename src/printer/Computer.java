@@ -4,6 +4,8 @@ public class Computer {
 
 private int id;
 private String name;
+PrinterCentralizer printerCentralizer = PrinterCentralizer.getInstance();	
+
 
 public Computer(int id, String name) {
 	this.id = id;
@@ -11,7 +13,7 @@ public Computer(int id, String name) {
 }
 
 public void print(String text) {
-	PrinterCentralizer.getInstance().print(text);
+	printerCentralizer.print(text);
 }
 
 
