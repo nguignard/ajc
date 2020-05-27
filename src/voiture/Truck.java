@@ -1,10 +1,8 @@
 package voiture;
 
-public class Truck extends Vehicle {
 
-	public Truck(String brand) {
-		super(brand);
-		// TODO Auto-generated constructor stub
-	}
-
+public abstract class Truck extends Vehicle {
+    public Truck(String brand) {
+        super(brand);
+    }
 }

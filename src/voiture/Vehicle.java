@@ -1,36 +1,14 @@
 package voiture;
 
-public abstract class Vehicle {
+import java.util.Scanner;
 
-	private int count=0;
-	public long id=0;
-	public String brand ="";
-	
-	public Vehicle(String brand) {
-		super();
-		this.brand = brand;
-	}
+public abstract class Vehicle implements IVehicleFactory {
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
+    private static long count = 0;
+    public final long ID = count++;
+    public String brand;
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Vehicle other = (Vehicle) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
-	
+    public Vehicle(String brand) {
+        this.brand = brand;
+    }
 }
