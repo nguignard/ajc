@@ -10,4 +10,6 @@ public class UnregisteredCar extends Car implements TollGatePayable{
     public int getTollGatePrice() {
         return 3;
     }
+
+	
 }

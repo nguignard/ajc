@@ -21,11 +21,15 @@ public class Application {
 	        pTrucks.add(new UnregisteredTruck("Peugeot"));
 	        pTrucks.add(new RegisteredTruck("Peugeot"));
 
+	        VehicleFactory vf = new VehicleFactory();
+	       pCars.add(vf.createVehicle(VehicleType.REGISTREDCAR, "brand", "plate"));
+			
 
 	        System.out.println("Parking All: " + pAll.vehicles.size());
 	        System.out.println("Parking Cars: " + pCars.vehicles.size());
 	        System.out.println("Parking Trucks: " + pTrucks.vehicles.size());
 			
+
 			
 			
 			

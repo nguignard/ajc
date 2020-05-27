@@ -2,7 +2,7 @@ package voiture;
 
 import java.util.Scanner;
 
-public abstract class Vehicle implements IVehicleFactory {
+public abstract class Vehicle {
 
     private static long count = 0;
     public final long ID = count++;
