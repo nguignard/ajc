@@ -9,7 +9,7 @@ public  class CarFactory extends ABaseFactory{
 
 	@Override
 	public Vehicle createUnRegisteredVehicle() {
-		return  new UnregisteredCar("UNreCar");
+		return new UnregisteredCar("UNreCar");
 	}
 	
 	

@@ -10,5 +10,13 @@ public abstract class Vehicle {
 
     public Vehicle(String brand) {
         this.brand = brand;
+        sayHello();   sayHello2();
     }
-}
+    
+    private void sayHello() {
+    	System.out.println("Hello "+this.getClass().getSimpleName());
+		
+	}
+
+	public abstract void sayHello2();
+ }

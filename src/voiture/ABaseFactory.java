@@ -7,7 +7,7 @@ public abstract class ABaseFactory {
 	
 	
 	
-	public ABaseFactory getCarFactory(FactoryType factoryType) {
+	public static ABaseFactory getCarFactory(FactoryType factoryType) {
 		if(FactoryType.CAR.equals(factoryType)) {
 			return new CarFactory();
 		}
@@ -17,7 +17,7 @@ public abstract class ABaseFactory {
 	
 
 	
-	private enum FactoryType{
+	public enum FactoryType{
 		CAR,TRUCK;
 	}
 }
