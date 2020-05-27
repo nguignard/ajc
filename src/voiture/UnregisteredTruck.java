@@ -14,4 +14,10 @@ public class UnregisteredTruck extends Truck implements TollGatePayable {
     public int getTollGatePrice() {
         return 5;
     }
+
+	@Override
+	public void sayHello2() {
+		// TODO Auto-generated method stub
+		
+	}
 }
