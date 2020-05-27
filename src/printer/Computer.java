@@ -13,7 +13,7 @@ public Computer(int id, String name) {
 }
 
 public void print(String text) {
-	printerCentralizer.print(text);
+	printerCentralizer.print(text+" from "+this.name);
 }
 
 

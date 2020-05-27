@@ -5,7 +5,7 @@ import java.util.List;
 
 import voiture.ABaseFactory.FactoryType;
 
-public class Application {
+public class ApplicationVehicles {
 
 	public static void main(String[] args) {
 //		 Parking<Vehicle> pAll = new Parking<>("Jean Jaures Public");

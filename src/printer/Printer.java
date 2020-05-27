@@ -11,7 +11,7 @@ public class Printer {
 	}
 	
 	public void print(String text) {
-		System.out.println("im " +id +"printing: "+text);
+		System.out.println("im " +brand +" printing: "+text);
 	}
 	
 	
