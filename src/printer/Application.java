@@ -9,17 +9,22 @@ public class Application {
 
 	public static void main(String[] args) {
 
-List<Printer> printers = new ArrayList<Printer>();
 List<Computer> computers = new ArrayList<Computer>();
-		
+PrinterCentralizer printerCentralizer = PrinterCentralizer.getInstance();	
+
+
 for(int i =0;i<6; i++) {
 	computers.add(new Computer(i,String.valueOf(i)));
 }
 
-printers.add(new Printer(0, "epson"));
-printers.add(new Printer(0, "canon"));
-printers.add(new Printer(0, "fuji"));		
+printerCentralizer.addPrinter(new Printer(0, "epson"));
+printerCentralizer.addPrinter(new Printer(1, "canon"));
+printerCentralizer.addPrinter(new Printer(2, "fuji"));
 
-		
+for(Computer computer :computers){
+	computer.print("text");
+}
+
+
 	}
 }

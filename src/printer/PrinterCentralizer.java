@@ -11,8 +11,16 @@ public class PrinterCentralizer {
 	private PrinterCentralizer() {
 	}
 	
+	public void addPrinter(Printer printer) {
+		printers.add(printer);
+	}
+
 	public void print(String text) {
 		
+		
+		for(Printer printer:printers) {
+			
+		}
 	}
 
 	public static PrinterCentralizer getInstance() {
@@ -20,7 +28,9 @@ public class PrinterCentralizer {
         {   INSTANCE = new PrinterCentralizer(); 
         }
         return INSTANCE;
-		
 	}
+	
+	
+		
 	
 }

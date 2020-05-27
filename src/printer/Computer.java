@@ -10,8 +10,8 @@ public Computer(int id, String name) {
 	this.name = name;
 }
 
-public void print(int id,String name) {
-	PrinterCentralizer.getInstance();
+public void print(String text) {
+	PrinterCentralizer.getInstance().print(text);
 }
 
 
