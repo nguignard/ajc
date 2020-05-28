@@ -28,14 +28,18 @@ public class ApplicationVehicles {
 	        ABaseFactory bf =  ABaseFactory.getCarFactory(FactoryType.CAR);
 	        Vehicle rc =   bf.createRegisteredVehicle();
 
-		// TBD
+		// CLONEABLE
+		System.out.println("CLONEABLE ---------------------");
 		Cache cache = new Cache();
-		cache.addVehicleInCache(pAll.vehicles);
-		cache.addVehicleInCache(pCars.vehicles);
-		cache.addVehicleInCache(pTrucks.vehicles);
+		cache.addVehicleInCache(pAll);
+		
+		for (Vehicle vehicle : cache.getParkedVehicles()) {
+		    System.out.println(vehicle.brand);
+		}
+
 
 		// DECORATOR
-		
+		System.out.println("DECORATOR ---------------------");
 		UnregistredCustomCar custCar = new UnregistredCustomCar(
 			new UnregisteredCar("Peugeot"),
 			1, "comment"
