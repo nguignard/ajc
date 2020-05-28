@@ -28,7 +28,7 @@ public class UnregistredTrailedCar extends UnregistredCarDecorator {
 	    return addedPrice;
     }
 
-    private enum TrailSize {
+    public enum TrailSize {
 	SMALL, MEDIUM, LARGE
     }
 

@@ -1,6 +1,7 @@
 package voiture;
 
 import voiture.ABaseFactory.FactoryType;
+import voiture.UnregistredTrailedCar.TrailSize;
 
 public class ApplicationVehicles {
 
@@ -27,10 +28,27 @@ public class ApplicationVehicles {
 	        ABaseFactory bf =  ABaseFactory.getCarFactory(FactoryType.CAR);
 	        Vehicle rc =   bf.createRegisteredVehicle();
 
+		// TBD
 		Cache cache = new Cache();
 		cache.addVehicleInCache(pAll.vehicles);
 		cache.addVehicleInCache(pCars.vehicles);
 		cache.addVehicleInCache(pTrucks.vehicles);
+
+		// DECORATOR
+		
+		UnregistredCustomCar custCar = new UnregistredCustomCar(
+			new UnregisteredCar("Peugeot"),
+			1, "comment"
+			);
+		UnregistredTrailedCar trailedCar = new UnregistredTrailedCar(
+			new UnregisteredCar("Peugeot"),
+			TrailSize.LARGE
+			);
+		
+
+			System.out.println(custCar.getTollGatePrice());
+			
+			System.out.println(trailedCar.getTollGatePrice());
 
 }
 }
