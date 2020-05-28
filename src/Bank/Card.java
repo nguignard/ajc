@@ -1,12 +1,8 @@
 package Bank;
 
-public class Card implements IAdapter {
+public interface Card {
 
-    private String accountNumber;
+    public void connect();
 
-    @Override
-    public void connect() {
-
-    }
-
+    public String getCode();
 }

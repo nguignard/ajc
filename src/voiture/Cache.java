@@ -14,7 +14,7 @@ public class Cache<T> {
 	public void addVehicleInCache(Set<T> newVehicles) {
 	    for (T vehicle : newVehicles) {
 
-		vehicles.add(vehicle.clone());
+		// vehicles.add(vehicle.clone());
 	    }
 	}
 

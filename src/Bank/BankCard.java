@@ -9,6 +9,7 @@ public class BankCard {
     }
     
     public void startTransaction() {
+	System.out.println("BankCard: " + accountNumber);
     }
     
 }
