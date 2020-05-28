@@ -11,8 +11,7 @@ public class CitySign extends AObserver {
 
     @Override
     public void update(String message) {
-	// TODO Auto-generated method stub
-
+	System.out.println(message);
     }
 
 }

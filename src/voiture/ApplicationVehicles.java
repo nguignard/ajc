@@ -63,5 +63,6 @@ public class ApplicationVehicles {
 		System.out.println("customCar" + customCar.getTollGatePrice());
 		System.out.println("trailedCar2" + trailedCar2.getTollGatePrice());
 
+
 	    }
 }
