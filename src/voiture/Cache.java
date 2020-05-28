@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Cache {
 
-    private Set<Vehicle> parkedVehicles = new HashSet<Vehicle>();
+    private Set<Vehicle> cacheddVehicles = new HashSet<Vehicle>();
 		
 	public Cache() {
 	}
@@ -15,7 +15,7 @@ public class Cache {
 	    
 	    for (Vehicle vehicle : vehicles) {
 		try {
-		    parkedVehicles.add(vehicle.clone());
+		    cacheddVehicles.add(vehicle.clone());
 		} catch (CloneNotSupportedException e) {
 		    e.printStackTrace();
 		}
@@ -23,7 +23,7 @@ public class Cache {
 	}
 
 	public Set<Vehicle> getParkedVehicles() {
-	    return this.parkedVehicles;
+	    return this.cacheddVehicles;
 }
 
 }

@@ -1,6 +1,6 @@
 package voiture;
 
-public abstract class Vehicle implements Cloneable {
+public abstract class Vehicle implements Cloneable, Parkable {
 
     private static long count = 0;
     public final long ID = count++;
@@ -12,7 +12,7 @@ public abstract class Vehicle implements Cloneable {
     }
     
     private void sayHello() {
-    	System.out.println("Hello "+this.getClass().getSimpleName());
+    	System.out.println("Im "+this.getClass().getSimpleName());
 		
 	}
     
@@ -20,5 +20,6 @@ public abstract class Vehicle implements Cloneable {
 	public Vehicle clone() throws CloneNotSupportedException {
 	    return (Vehicle) super.clone();
 	};
+
 
  }

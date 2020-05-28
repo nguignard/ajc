@@ -1,6 +1,6 @@
 package voiture;
 
-public abstract class UnregistredCarDecorator implements TollGatePayable {
+public abstract class UnregistredCarDecorator implements TollGatePayable, ParkableCar {
 
     UnregisteredCar car;
 

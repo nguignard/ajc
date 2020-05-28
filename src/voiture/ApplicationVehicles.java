@@ -28,17 +28,19 @@ public class ApplicationVehicles {
 	        ABaseFactory bf =  ABaseFactory.getCarFactory(FactoryType.CAR);
 	        Vehicle rc =   bf.createRegisteredVehicle();
 
-		// CLONEABLE
+// CLONEABLE
 		System.out.println("CLONEABLE ---------------------");
 		Cache cache = new Cache();
 		cache.addVehicleInCache(pAll);
 		
 		for (Vehicle vehicle : cache.getParkedVehicles()) {
 		    System.out.println(vehicle.brand);
+		    System.out.println(pAll.vehicles.contains(vehicle));
 		}
+		
 
 
-		// DECORATOR
+// DECORATOR
 		System.out.println("DECORATOR ---------------------");
 		UnregistredCustomCar custCar = new UnregistredCustomCar(
 			new UnregisteredCar("Peugeot"),
@@ -53,6 +55,20 @@ public class ApplicationVehicles {
 			System.out.println(custCar.getTollGatePrice());
 			
 			System.out.println(trailedCar.getTollGatePrice());
+
+			// BRIDGE
+			System.out.println("BRIDGE ---------------------");
+
+			UnregistredCustomCar customCar = new UnregistredCustomCar(new UnregisteredCar("Peugeot"),
+				1,
+				"comment");
+			UnregistredTrailedCar trailedCar2 = new UnregistredTrailedCar(new UnregisteredCar(
+				"Peugeot"),
+				TrailSize.LARGE);
+
+			System.out.println("customCar" + customCar.getTollGatePrice());
+
+			System.out.println("trailedCar2" + trailedCar2.getTollGatePrice());
 
 }
 }
