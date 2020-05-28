@@ -1,8 +1,6 @@
 package voiture;
 
-import java.util.Scanner;
-
-public abstract class Vehicle {
+public abstract class Vehicle implements Cloneable {
 
     private static long count = 0;
     public final long ID = count++;
@@ -10,7 +8,7 @@ public abstract class Vehicle {
 
     public Vehicle(String brand) {
         this.brand = brand;
-        sayHello();   sayHello2();
+		sayHello();
     }
     
     private void sayHello() {
@@ -18,5 +16,4 @@ public abstract class Vehicle {
 		
 	}
 
-	public abstract void sayHello2();
  }

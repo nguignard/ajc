@@ -1,9 +1,5 @@
 package voiture;
 
-
-
-import java.util.Scanner;
-
 public class UnregisteredTruck extends Truck implements TollGatePayable {
 
     public UnregisteredTruck(String brand) {
@@ -15,9 +11,4 @@ public class UnregisteredTruck extends Truck implements TollGatePayable {
         return 5;
     }
 
-	@Override
-	public void sayHello2() {
-		// TODO Auto-generated method stub
-		
-	}
 }

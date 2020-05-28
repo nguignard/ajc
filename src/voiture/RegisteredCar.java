@@ -6,9 +6,4 @@ public class RegisteredCar extends Car {
         super(brand);
     }
 
-	@Override
-	public void sayHello2() {
-	System.out.println("Hello2 "+this.getClass().getSimpleName());
-		
-	}
 }

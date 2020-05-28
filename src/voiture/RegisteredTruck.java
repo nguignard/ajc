@@ -6,9 +6,4 @@ public class RegisteredTruck extends Truck {
         super(brand);
     }
 
-	@Override
-	public void sayHello2() {
-		// TODO Auto-generated method stub
-		
-	}
 }
