@@ -12,13 +12,11 @@ public class Parking<T> extends ASubject {
     public Set<T> vehicles = new HashSet();
     public Queue waiting;
     private ASubject subject;
-    private AObserver observer;
+
 
 
     public Parking(String parkingName) {
 	this.parkigName = parkingName;
-	observer = new CitySign("info");
-	subject.attached(observer);
     }
 
     public void park(T vehicle) {

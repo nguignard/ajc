@@ -10,7 +10,8 @@ public class ApplicationVehicles {
 		Parking<Car> pCars = new Parking<Car>("Jean Jaures Truck");
 		Parking<Truck> pTrucks = new Parking<>("Jean Jaures Car");
 
-		pAll.park(new UnregisteredCar("Peugeot"));
+		Vehicle voiture =  new UnregisteredCar("Peugeot");
+		pAll.park(voiture);
 		pAll.park(new RegisteredCar("Peugeot"));
 		pAll.park(new UnregisteredTruck("Peugeot"));
 		pAll.park(new RegisteredTruck("Peugeot"));
@@ -63,6 +64,16 @@ public class ApplicationVehicles {
 		System.out.println("customCar" + customCar.getTollGatePrice());
 		System.out.println("trailedCar2" + trailedCar2.getTollGatePrice());
 
+
+// OBSERVER
+		System.out.println("OBSERVER ---------------------");
+
+		CitySign citySign = new CitySign("parkingAll");
+		pAll.attached(citySign);
+		pAll.exit(voiture);
+
+
+		//
 
 	    }
 }
