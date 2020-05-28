@@ -1,23 +1,27 @@
 package voiture;
 
 import java.util.HashSet;
-import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
-public class Parking<T> {
+public class Parking<T> extends ASubject {
 
-	String name;
-	private String code;
+    private String code;
+    public String name;
     public int capacity = 3;
-    
-    Set<T> vehicles = new HashSet();
+    public Set<T> vehicles = new HashSet();
+    public Queue waiting;
 
     public Parking(String name) {
         this.name = name;
     }
 
-    public void add(T vehicle) {
-        this.vehicles.add(vehicle);
+    public void park(T vehicle) {
+	this.vehicles.add(vehicle);
+    }
+
+    public void exit(T vehicle) {
+	this.vehicles.remove(vehicle);
     }
 
     public Integer calculateTotalPrice(){
@@ -25,5 +29,17 @@ public class Parking<T> {
                 .filter(vehicle -> vehicle instanceof TollGatePayable)
                 .mapToInt(v ->( (TollGatePayable) v).getTollGatePrice())
                 .sum();
+    }
+
+    @Override
+    public void notiffyAll() {
+	// TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void attached(AObserver observer) {
+	// TODO Auto-generated method stub
+
     }
 }

@@ -10,16 +10,16 @@ public class ApplicationVehicles {
 		Parking<Car> pCars = new Parking<Car>("Jean Jaures Truck");
 		Parking<Truck> pTrucks = new Parking<>("Jean Jaures Car");
 
-		pAll.add(new UnregisteredCar("Peugeot"));
-		pAll.add(new RegisteredCar("Peugeot"));
-		pAll.add(new UnregisteredTruck("Peugeot"));
-		pAll.add(new RegisteredTruck("Peugeot"));
+		pAll.park(new UnregisteredCar("Peugeot"));
+		pAll.park(new RegisteredCar("Peugeot"));
+		pAll.park(new UnregisteredTruck("Peugeot"));
+		pAll.park(new RegisteredTruck("Peugeot"));
 
-		pCars.add(new UnregisteredCar("Peugeot"));
-		pCars.add(new RegisteredCar("Peugeot"));
+		pCars.park(new UnregisteredCar("Peugeot"));
+		pCars.park(new RegisteredCar("Peugeot"));
 
-		pTrucks.add(new UnregisteredTruck("Peugeot"));
-		pTrucks.add(new RegisteredTruck("Peugeot"));
+		pTrucks.park(new UnregisteredTruck("Peugeot"));
+		pTrucks.park(new RegisteredTruck("Peugeot"));
 
 		System.out.println("Parking All: " + pAll.vehicles.size());
 		System.out.println("Parking Cars: " + pCars.vehicles.size());
@@ -50,25 +50,18 @@ public class ApplicationVehicles {
 			new UnregisteredCar("Peugeot"),
 			TrailSize.LARGE
 			);
-		
+		System.out.println(custCar.getTollGatePrice());
+		System.out.println(trailedCar.getTollGatePrice());
 
-			System.out.println(custCar.getTollGatePrice());
-			
-			System.out.println(trailedCar.getTollGatePrice());
+// BRIDGE
+		System.out.println("BRIDGE ---------------------");
 
-			// BRIDGE
-			System.out.println("BRIDGE ---------------------");
+		UnregistredCustomCar customCar = new UnregistredCustomCar(new UnregisteredCar("Peugeot"), 1, "comment");
+		UnregistredTrailedCar trailedCar2 = new UnregistredTrailedCar(new UnregisteredCar("Peugeot"),
+			TrailSize.LARGE);
 
-			UnregistredCustomCar customCar = new UnregistredCustomCar(new UnregisteredCar("Peugeot"),
-				1,
-				"comment");
-			UnregistredTrailedCar trailedCar2 = new UnregistredTrailedCar(new UnregisteredCar(
-				"Peugeot"),
-				TrailSize.LARGE);
+		System.out.println("customCar" + customCar.getTollGatePrice());
+		System.out.println("trailedCar2" + trailedCar2.getTollGatePrice());
 
-			System.out.println("customCar" + customCar.getTollGatePrice());
-
-			System.out.println("trailedCar2" + trailedCar2.getTollGatePrice());
-
-}
+	    }
 }
