@@ -65,6 +65,9 @@ public class ApplicationVehicles {
 		System.out.println("OBSERVER ---------------------");
 		pAll.exit(voiture);
 
+// STATES
+		System.out.println("STATES ---------------------");
+
 		//
 	    }
 

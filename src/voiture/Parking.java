@@ -40,4 +40,15 @@ public class Parking<T> extends ASubject {
                 .sum();
     }
 
+
+    public void closeParking() {
+	state = new OpenState();
+	state.getMessage(this);
+    }
+
+    public void openParking() {
+	state = new CloseState();
+	state.getMessage(this);
+    }
+
 }
