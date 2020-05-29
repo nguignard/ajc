@@ -12,15 +12,18 @@ public class Parking<T> extends ASubject {
     public Set<T> vehicles = new HashSet();
     public Queue waiting;
     private ASubject subject;
+    private State state;
 
 
 
     public Parking(String parkingName) {
 	this.parkigName = parkingName;
+	this.subject = this;
     }
 
     public void park(T vehicle) {
 	this.vehicles.add(vehicle);
+	this.vehicles.size();
 	subject.notiffyAll(this.parkigName + " left: " + (capacity - this.vehicles.size()));
 
     }

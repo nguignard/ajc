@@ -9,18 +9,14 @@ public class ApplicationVehicles {
 		Parking<Vehicle> pAll = new Parking<>("Jean Jaures Public");
 		Parking<Car> pCars = new Parking<Car>("Jean Jaures Truck");
 		Parking<Truck> pTrucks = new Parking<>("Jean Jaures Car");
+		UnregisteredCar voiture = new UnregisteredCar("Peugeot");
 
-		Vehicle voiture =  new UnregisteredCar("Peugeot");
-		pAll.park(voiture);
-		pAll.park(new RegisteredCar("Peugeot"));
-		pAll.park(new UnregisteredTruck("Peugeot"));
-		pAll.park(new RegisteredTruck("Peugeot"));
+		Cache cache = new Cache();
 
-		pCars.park(new UnregisteredCar("Peugeot"));
-		pCars.park(new RegisteredCar("Peugeot"));
+		CitySign citySign = new CitySign("parkingAll");
+		pAll.attached(citySign);
 
-		pTrucks.park(new UnregisteredTruck("Peugeot"));
-		pTrucks.park(new RegisteredTruck("Peugeot"));
+		addVehicles(pAll, pCars, pTrucks, voiture);
 
 		System.out.println("Parking All: " + pAll.vehicles.size());
 		System.out.println("Parking Cars: " + pCars.vehicles.size());
@@ -31,7 +27,7 @@ public class ApplicationVehicles {
 
 // CLONEABLE
 		System.out.println("CLONEABLE ---------------------");
-		Cache cache = new Cache();
+
 		cache.addVehicleInCache(pAll);
 		
 		for (Vehicle vehicle : cache.getParkedVehicles()) {
@@ -67,13 +63,24 @@ public class ApplicationVehicles {
 
 // OBSERVER
 		System.out.println("OBSERVER ---------------------");
-
-		CitySign citySign = new CitySign("parkingAll");
-		pAll.attached(citySign);
 		pAll.exit(voiture);
 
-
 		//
-
 	    }
+
+
+	    private static void addVehicles(Parking<Vehicle> pAll, Parking<Car> pCars, Parking<Truck> pTrucks,
+		    UnregisteredCar voiture) {
+
+	    pAll.park(voiture);
+	    pAll.park(new RegisteredCar("Peugeot"));
+	    pAll.park(new UnregisteredTruck("Peugeot"));
+	    pAll.park(new RegisteredTruck("Peugeot"));
+
+	    pCars.park(new UnregisteredCar("Peugeot"));
+	    pCars.park(new RegisteredCar("Peugeot"));
+
+	    pTrucks.park(new UnregisteredTruck("Peugeot"));
+	    pTrucks.park(new RegisteredTruck("Peugeot"));
+	}
 }
