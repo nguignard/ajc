@@ -42,12 +42,13 @@ public class Parking<T> extends ASubject {
 
 
     public void closeParking() {
-	state = new OpenState();
+	state = new CloseState();
+
 	state.getMessage(this);
     }
 
     public void openParking() {
-	state = new CloseState();
+	state = new OpenState();
 	state.getMessage(this);
     }
 

@@ -57,7 +57,6 @@ public class ApplicationVehicles {
 		UnregistredTrailedCar trailedCar2 = new UnregistredTrailedCar(new UnregisteredCar("Peugeot"),
 			TrailSize.LARGE);
 
-		System.out.println("customCar" + customCar.getTollGatePrice());
 		System.out.println("trailedCar2" + trailedCar2.getTollGatePrice());
 
 
@@ -68,6 +67,8 @@ public class ApplicationVehicles {
 // STATES
 		System.out.println("STATES ---------------------");
 
+		pAll.closeParking();
+		pAll.openParking();
 		//
 	    }
 
